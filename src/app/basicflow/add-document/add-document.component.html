@@ -1,0 +1,71 @@
+<div class="add-doc-container">
+    <!---------------- Page Title ---------------->
+    <p class="page-title">
+        Create New Contract
+    </p>
+
+    <!---------------- New Contract Form Section ---------------->
+    <div class="row">
+        <div class="col">
+            <div class="bg-white box-shadow-c big-WboxR-height border mb-4 mt-0">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="blueshade blueshade-left big-WboxR-height">
+                            <span>Create</span>New Contract
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="big-WboxR-height mt-5">
+                            <form class="mr-4 dms-forms needs-validation">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="docName">Name of Folder <i class="fa fa-exclamation-circle"
+                                                    aria-hidden="true"></i></label>
+                                            <input type="text" class="form-control" name="docName" id="docName"
+                                                formControlName="docName">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="description">Description <i class="fa fa-exclamation-circle"
+                                                    aria-hidden="true"></i></label>
+                                            <textarea class="form-control" name="description" id="description" rows="2"
+                                                formControlName="description"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="cedingCompany">Company <i class="fa fa-exclamation-circle"
+                                                    aria-hidden="true"></i></label>
+                                            <input type="text" class="form-control" name="cedingCompany"
+                                                id="cedingCompany" formControlName="cedingCompany">
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <div class="form-group">
+                                            <label for="planid">Plan ID. <i class="fa fa-exclamation-circle"
+                                                    aria-hidden="true"></i></label>
+                                            <input type="text" class="form-control" name="planid" id="planid"
+                                                formControlName="planid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end align-items-end action-btn mt-5">
+                                    <button type="button" class="btn btn-outline-primary rounded-0" (click)="cancel()">Cancel</button>
+                                    <button type="submit" class="btn btn-primary rounded-0 ml-3" (click)="continue()">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,482 @@
+<div class="dashboard-container mb-4">
+    <!---------------- Page Title ---------------->
+    <p class="page-title">
+        Dashboard
+    </p>
+
+    <!---------------- Dashboard Info Titles ---------------->
+    <div class="row">
+        <div class="col-10">
+            <div class="d-flex justify-content-start info-titles-box">
+                <div class="info-box d-flex align-items-center pr-4 mr-4 border-right">
+                    <i class="titles-icon plan-type-icon mr-4"></i>
+                    <i class="titles-icon plan-type-icon mr-4"></i>
+                    <div class="info-details">
+                        <span>
+                            Plan Type dashboard test
+                        </span>
+                        <span class="info-number">
+                            3
+                        </span>
+                    </div>
+                </div>
+                <!-- <div class="info-box d-flex align-items-center pr-4 mr-4 border-right">
+                    <i class="titles-icon users-icon mr-4"></i>
+                    <div class="info-details">
+                        <span>
+                            Users
+                        </span>
+                        <span class="info-number">
+                            28
+                        </span>
+                    </div>
+                </div> -->
+                <div class="info-box d-flex align-items-center pr-4 mr-4 border-right">
+                    <i class="titles-icon total-contract-icon mr-4"></i>
+                    <div class="info-details">
+                        <span>
+                            Total Contracts
+                        </span>
+                        <span class="info-number">
+                            170
+                        </span>
+                    </div>
+                </div>
+                <div class="info-box d-flex align-items-center">
+                    <i class="titles-icon total-files-icon mr-4"></i>
+                    <div class="info-details">
+                        <span>
+                            Total Files
+                        </span>
+                        <span class="info-number">
+                            2026
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 text-right">
+            <div class="adv-search-btn ml-2">
+                <button class="btn btn-primary btn-sm p-2" type="button" (click)="continue()">Add New Contract</button>
+            </div>
+        </div>
+    </div>
+
+    <!---------------- Dashboard Files Garph Section ---------------->
+    <div class="info-cards">
+        <div class="row mt-5">
+            <div class="col-8">
+                <div class="card box-shadow-c">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="row">
+                                    <div class="col-10">
+                                        <p class="card-header-titles">
+                                            Contracts
+                                            <i class="title-border-b"></i>
+                                        </p>
+                                    </div>
+                                    <div class="col-2 text-right">
+                                        <span class="view-all">
+                                            <a href="">
+                                                View All
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="scrollbar-primary scrollStyle">
+                                    <div class="grid-view d-flex justify-content-center">
+                                        <p-table [value]="gridfiles">
+                                            <ng-template pTemplate="header">
+                                                <tr>
+                                                    <th>Document Name</th>
+                                                    <th> File Count</th>
+                                                    <th>Company Name</th>
+                                                    <th>Segments</th>
+                                                    <th>Effective Date</th>
+                                                    <!-- <th></th> -->
+                                                </tr>
+                                            </ng-template>
+                                            <ng-template pTemplate="body" let-gridfiles>
+                                                <tr>
+                                                    <td class= "border-0 px-0">
+                                                        <div class="grid-shadow-strip d-flex align-items-center">
+                                                            <span class="grid-content text-truncate pr-3">
+                                                                {{gridfiles.docname}}
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td class= "border-0 px-0">
+                                                        <div class="grid-shadow-strip d-flex align-items-center">
+                                                            <span class="grid-content text-truncate pr-3">
+                                                                {{gridfiles.fileno}}
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td class= "border-0 px-0">
+                                                        <div class="grid-shadow-strip d-flex align-items-center">
+                                                            <span class="grid-content text-truncate pr-3">
+                                                                {{gridfiles.company}}
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <td class= "border-0 px-0">
+                                                        <div class="grid-shadow-strip d-flex align-items-center">
+                                                            <span class="grid-content text-truncate pr-3">
+                                                                {{gridfiles.segment}}
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                    <!-- <td class= "border-0 px-0">
+                                                        <div class="grid-shadow-strip d-flex align-items-center">
+                                                            <span class="grid-content text-truncate pr-3">
+                                                                {{gridfiles.planname}}
+                                                            </span>
+                                                        </div>
+                                                    </td> -->
+                                                    <td class= "border-0 px-0">
+                                                        <div class="grid-shadow-strip d-flex align-items-center">
+                                                            <span class="grid-content text-truncate pr-3">
+                                                                {{gridfiles.date}}
+                                                            </span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                    </div>
+                                </div>
+                                </div>
+                                
+                            <!-- <div class="col-4">
+                                <i class="fa fa-info-circle fa-6" aria-hidden="true"></i>
+                                <div class="overlay-lightbox"></div>
+                                <div class="container-lightbox"></div>
+                                <div class="doughnut-box py-3">
+                                    <p-chart type="doughnut" [data]="data" width="260" height="260"></p-chart>
+                                </div>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="info-cards info-card-h bg-white box-shadow-c">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-8">
+                                    <p class="card-header-titles pl-0 pt-0">
+                                        Recent Activites
+                                        <i class="title-border-b"></i>
+                                    </p>
+                                </div>
+                                <div class="col-4 text-right pr-0">
+                                    <span class="view-all pt-0">
+                                        <a href="">
+                                            View All
+                                        </a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="scrollbar-primary scrollStyle">
+                                        <div class="d-flex justify-content-start flex-column info-titles-box">
+                                            <div class="info-box d-flex align-items-start mb-4">
+                                                <i class="fa fa-check-circle mr-3" aria-hidden="true"></i>
+                                                <div class="info-details info-card-details w-75">
+                                                    <span class="status-header-txt">
+                                                        Contract Compelete
+                                                    </span>
+                                                    <div class="row mt-3 border-bottom">
+                                                        <div class="col-2 pr-0">
+                                                            <i class="user-icon"></i>
+                                                        </div>
+                                                        <div class="col-10 pl-0">
+                                                            <p class="activity-txt">John Smith has compelete <span>Contract</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-start mb-4">
+                                                <i class="fa fa-exclamation-circle mr-3" aria-hidden="true"></i>
+                                                <div class="info-details info-card-details w-75">
+                                                    <span class="status-header-txt">
+                                                        Contract Exception
+                                                    </span>
+                                                    <div class="row mt-3 border-bottom">
+                                                        <div class="col-2 pr-0">
+                                                            <i class="user-icon"></i>
+                                                        </div>
+                                                        <div class="col-10 pl-0">
+                                                            <p class="activity-txt">John Smith has exception in <span>Contract</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-start mb-4">
+                                                <i class="fa fa-exclamation-circle mr-3" aria-hidden="true"></i>
+                                                <div class="info-details info-card-details w-75">
+                                                    <span class="status-header-txt">
+                                                        Contract Exception
+                                                    </span>
+                                                    <div class="row mt-3 border-bottom">
+                                                        <div class="col-2 pr-0">
+                                                            <i class="user-icon"></i>
+                                                        </div>
+                                                        <div class="col-10 pl-0">
+                                                            <p class="activity-txt">John Smith has exception in <span>Contract</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-start mb-4">
+                                                <i class="fa fa-exclamation-circle mr-3" aria-hidden="true"></i>
+                                                <div class="info-details info-card-details w-75">
+                                                    <span class="status-header-txt">
+                                                        Contract Exception
+                                                    </span>
+                                                    <div class="row mt-3 border-bottom">
+                                                        <div class="col-2 pr-0">
+                                                            <i class="user-icon"></i>
+                                                        </div>
+                                                        <div class="col-10 pl-0">
+                                                            <p class="activity-txt">John Smith has exception in <span>Contract</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-start mb-4">
+                                                <i class="fa fa-exclamation-circle mr-3" aria-hidden="true"></i>
+                                                <div class="info-details info-card-details w-75">
+                                                    <span class="status-header-txt">
+                                                        Contract Exception
+                                                    </span>
+                                                    <div class="row mt-3 border-bottom">
+                                                        <div class="col-2 pr-0">
+                                                            <i class="user-icon"></i>
+                                                        </div>
+                                                        <div class="col-10 pl-0">
+                                                            <p class="activity-txt">John Smith has exception in <span>Contract</span></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------- Dashboard below three cards Section ---------------->
+    <!-- <div class="row mt-4">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-4">
+                    <div class="info-cards info-card-h bg-white box-shadow-c">
+                        <div class="card border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p class="card-header-titles pl-0 pt-0">
+                                            Recent Contracts
+                                            <i class="title-border-b"></i>
+                                        </p>
+                                    </div>
+                                    <div class="col-4 text-right pr-0">
+                                        <span class="view-all pt-0">
+                                            <a href="">
+                                                View All
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="d-flex justify-content-start flex-column info-titles-box">
+                                            <div class="info-box d-flex align-items-center mb-4">
+                                                <i class="titles-icon total-contract-icon mr-4"></i>
+                                                <div class="info-details info-card-details">
+                                                    <span>
+                                                        Coco Cola
+                                                    </span>
+                                                    <span class="info-number">
+                                                        PP12345
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-center mb-4">
+                                                <i class="titles-icon total-contract-icon mr-4"></i>
+                                                <div class="info-details info-card-details">
+                                                    <span>
+                                                        Coco Cola
+                                                    </span>
+                                                    <span class="info-number">
+                                                        PP12345
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-center mb-4">
+                                                <i class="titles-icon total-contract-icon mr-4"></i>
+                                                <div class="info-details info-card-details">
+                                                    <span>
+                                                        Coco Cola
+                                                    </span>
+                                                    <span class="info-number">
+                                                        PP12345
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-center mb-4">
+                                                <i class="titles-icon total-contract-icon mr-4"></i>
+                                                <div class="info-details info-card-details">
+                                                    <span>
+                                                        Coco Cola
+                                                    </span>
+                                                    <span class="info-number">
+                                                        PP12345
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="info-box d-flex align-items-center">
+                                                <i class="titles-icon total-contract-icon mr-4"></i>
+                                                <div class="info-details info-card-details">
+                                                    <span>
+                                                        Coco Cola
+                                                    </span>
+                                                    <span class="info-number">
+                                                        PP12345
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="info-cards info-card-h bg-white box-shadow-c">
+                        <div class="card border-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p class="card-header-titles pl-0 pt-0">
+                                            Recent Activites
+                                            <i class="title-border-b"></i>
+                                        </p>
+                                    </div>
+                                    <div class="col-4 text-right pr-0">
+                                        <span class="view-all pt-0">
+                                            <a href="">
+                                                View All
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="scrollbar-primary scrollStyle">
+                                            <div class="d-flex justify-content-start flex-column info-titles-box">
+                                                <div class="info-box d-flex align-items-start mb-4">
+                                                    <i class="fa fa-check-circle mr-3" aria-hidden="true"></i>
+                                                    <div class="info-details info-card-details w-75">
+                                                        <span class="status-header-txt">
+                                                            Contract Compelete
+                                                        </span>
+                                                        <div class="row mt-3 border-bottom">
+                                                            <div class="col-2 pr-0">
+                                                                <i class="user-icon"></i>
+                                                            </div>
+                                                            <div class="col-10 pl-0">
+                                                                <p class="activity-txt">John Smith has compelete <span>Contract</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="info-box d-flex align-items-start mb-4">
+                                                    <i class="fa fa-exclamation-circle mr-3" aria-hidden="true"></i>
+                                                    <div class="info-details info-card-details w-75">
+                                                        <span class="status-header-txt">
+                                                            Contract Exception
+                                                        </span>
+                                                        <div class="row mt-3 border-bottom">
+                                                            <div class="col-2 pr-0">
+                                                                <i class="user-icon"></i>
+                                                            </div>
+                                                            <div class="col-10 pl-0">
+                                                                <p class="activity-txt">John Smith has exception in <span>Contract</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="info-box d-flex align-items-start mb-4">
+                                                    <i class="fa fa-exclamation-circle mr-3" aria-hidden="true"></i>
+                                                    <div class="info-details info-card-details w-75">
+                                                        <span class="status-header-txt">
+                                                            Contract Exception
+                                                        </span>
+                                                        <div class="row mt-3 border-bottom">
+                                                            <div class="col-2 pr-0">
+                                                                <i class="user-icon"></i>
+                                                            </div>
+                                                            <div class="col-10 pl-0">
+                                                                <p class="activity-txt">John Smith has exception in <span>Contract</span></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="info-cards info-card-h bg-white box-shadow-c">
+                        <div class="card border-0">
+                            <div class="card-body p-0">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <p class="card-header-titles">
+                                            Analysis
+                                            <i class="title-border-b"></i>
+                                        </p>
+                                    </div>
+                                    <div class="col-4 text-right d-none">
+                                        <span class="view-all">
+                                            <a href="">
+                                                View All
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="pcm-bar-chart pl-4">
+                                            <img src="../../assets/images/graph-db.png" />
+                                            <p-chart type="bar" [bardata]="bardata"></p-chart>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+</div>

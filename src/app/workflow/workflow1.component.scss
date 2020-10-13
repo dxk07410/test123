@@ -1,0 +1,90 @@
+.workflow-container {
+    .page-title {
+        font-family: "WhitneySSm-Semibold-Bas";
+        font-size: 18px;
+    }
+    .info-titles-box {
+        .info-box {
+            .info-details {
+                display: inline-block;
+                span {
+                    font-family: "WhitneySSm-Book-Bas";
+                    display: block;
+                    line-height: normal;
+                    &:first-child {
+                        color: #b5b6b8;
+                    }
+                    &.info-number {
+                        color: #e3336d;
+                        font-size: 24px;
+                        font-family: "WhitneySSm-Medium-Bas";
+                    }
+                }
+                &.info-card-details {
+                    span {
+                        font-family: "WhitneySSm-Medium-Bas";
+                        display: block;
+                        line-height: normal;
+                        &:first-child {
+                            color: #748eba;
+                        }
+                        &.info-number {
+                            color: #9c9c9e;
+                            font-size: 14px;
+                            font-family: "WhitneySSm-Book-Bas";
+                        }
+                        &.status-header-txt {
+                            color: #e3336d;
+                            font-size: 16px;
+                            font-family: "WhitneySSm-Semibold-Bas";
+                        }
+                    }
+                    .activity-txt {
+                        color: #9c9c9e;
+                        font-family: "WhitneySSm-Book-Bas";
+                        font-size: 14px;
+                        span {
+                            color: #9c9c9e;
+                            font-family: "WhitneySSm-Semibold-Bas";
+                        }
+                    }   
+                }
+            }
+        }
+    }
+    .info-cards {
+        .card-header-titles {
+            padding: 20px 0 0 20px;
+            color: #525355;
+            font-family: 'WhitneySSm-Medium-Bas';
+            .title-border-b {
+                border-bottom: 5px solid #cb4b43;
+                display: block;
+                width: 68px;
+                margin: 4px 0 0;
+            }
+        }
+        span.view-all {
+            padding: 20px 20px 0 0;
+            font-family: 'WhitneySSm-Medium-Bas';
+            font-size: 12px;
+            display: block;
+        }
+    }
+    .info-card-h {
+        height: 488px;
+        max-height: 488px;
+        .scrollStyle {
+            height: 399px;
+        }
+    }
+    .unassigned {
+        .info-box {
+            border-left: 4px solid #ffad01;
+            background: rgba(131, 156, 186, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.add-doc-container {
+    .page-title {
+        font-family: "WhitneySSm-Semibold-Bas";
+        font-size: 18px;
+    }
+}
+.blueshade {
+    background-position: center 70%;
+    background-repeat: no-repeat;
+    background-color: rgba(52, 93, 139, 0.7);
+    background-size: 70%;
+    display: block;
+    position: absolute;
+    width: calc(100% - 30px);
+    // height: 99.8%;
+    z-index: 0;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'WhitneySSm-Light-Bas';
+    color: #fff;
+    &.blueshade-left {
+        // background-image: url("../../../assets/images/add-file.png");
+        background-image: url("../../../assets/images/add-new-document.png");
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        left: 15px;
+        padding: 45px 0 0 35px;
+    }
+    > span {
+        font-family: 'WhitneySSm-Medium-Bas';
+        font-style: oblique;
+        font-size: 30px;
+        display: block;
+        line-height: 28px;
+    }
+  }

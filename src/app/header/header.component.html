@@ -1,0 +1,47 @@
+<header>
+    <div class="leftside-panel bg-white box-shadow-c d-block h-100">
+        <div class="logo-container">
+            <a href="">
+                <i class="k-logo"></i>
+            </a>
+        </div>
+        <nav class="nav flex-column">
+            <a class="nav-link active" href="#" [routerLink]="['/dashboard']">Dashboard</a>
+            <!-- <a class="nav-link" href="#">Contracts</a>
+            <a class="nav-link" href="#" [routerLink]="['/workflow']">Activites</a>
+            <a class="nav-link" href="#">Clients</a>
+            <a class="nav-link" href="#">User Management</a> -->
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 header-box header-fix bg-moddy-blue line-h-0 p-2">
+                <div class="d-flex justify-content-start align-items-center">
+                    <div class="search-panel">
+                        <div class="input-group">
+                            <input type="text" class="form-control"
+                                placeholder="Please enter to search in repository">
+                            <div class="input-group-append">
+                                <button class="btn fa fa-search"
+                                    type="button" (click)="search()">&nbsp;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-profile-box d-flex align-items-center ml-auto mr-3">
+                        <div class="user-details">
+                            <span class="welcome">
+                                Welcome,
+                            </span>
+                            <span class="user-name">
+                                John Smith
+                            </span>
+                        </div>
+                        <div class="user-pic ml-3">
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,244 @@
+.file-upload-container {
+    .page-title {
+        font-family: "WhitneySSm-Semibold-Bas";
+        font-size: 18px;
+    }
+}
+.dragNdrop-placehoder {
+    .action-btn {
+        bottom: 0;
+        right: 15px;
+        .btn-primary {
+            background: #345d8b;
+        }
+    }
+}
+.document-header {
+    margin-top: 2.1rem;
+    p {
+        color: #406A9C;	
+        font-size: 14px;	
+        line-height: 16px;
+    }
+    .uploading-txt {
+        span {
+            color: #D93540;	
+            font-size: 12px;	
+            font-family: 'WhitneySSm-Light-Bas';
+            font-weight: 300;	
+            line-height: 13px;
+        }
+    }
+}
+.upload-file-box-height {
+    height: 543px;
+    max-height: 543px;
+    .upload-file-box {
+        height: 60px;	
+        // width: 315px;	
+        width: 96%;
+        border-radius: 10px;	
+        background-color: #FFFFFF;	
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+        margin: 0 auto;
+        display: block;
+        .file-icon {
+            color: #406A9C;
+            opacity: 0.35;
+        }
+        .upload-file-txt {
+            color: #406A9C;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+        }
+        .donut-progress-box{
+            position: relative;
+            top: -11px;
+        }
+        .action-icons {
+            ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li {
+                    display: inline-block;
+                    margin-left: 20px;
+                    .fa-trash {
+                        color: #052C50;
+                        opacity: 0.3;
+                    }
+                    .fa-trash, .fa-undo {
+                        cursor: pointer;
+                    }
+                    i {
+                        font-size: 1.46rem;                        
+                    }
+                }
+            }
+        }
+        .w-53 {
+            width: 53.33%;
+        }
+    }
+    .scrollbar {
+        margin-right: -20px;
+        .force-overflow {
+            max-height: 446px;
+        }
+    }
+}
+
+
+.blueshade {
+    background-position: center 70%;
+    background-repeat: no-repeat;
+    background-color: rgba(52, 93, 139, 0.7);
+    background-size: 60%;
+    display: block;
+    position: absolute;
+    width: calc(100% - 30px);
+    // height: 99.8%;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    &.blueshade-right {
+        background-image: url("../../../assets/images/upload-files.png");
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        right: 15px;
+        padding: 37px 0 0 70px;
+    }
+    > span {
+        font-size: 40px;
+        display: block;
+        line-height: 50px;
+    }
+  }
+
+/************************************************************** File loader CSS start  **************************************************************/
+
+//styling
+$borderWidth: 4px;
+$animationTime: 1.5s;
+$border-color-default: rgba(71,75,77,0.15);
+$border-color-fill: #406A9C;
+$size: 22px;
+
+//Create how many steps
+$howManySteps: 10; //this needs to be even. 
+//for fun try using 20 and changine in the HTML the data-percentage to 15 or 85
+
+.donut-progress {
+  width: $size;
+  height: $size;
+  line-height: $size;
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
+  position: relative;
+  top: 3px;
+  &:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: $borderWidth solid $border-color-default;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  > span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .donut-progress-left {
+    left: 0;
+  }
+  .donut-progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: $borderWidth;
+    border-style: solid;
+    position: absolute;
+    top: 0;
+    border-color: $border-color-fill;
+  }
+  .donut-progress-left .donut-progress-bar {
+    left: 100%;
+    border-top-right-radius: ($size/2);;
+    border-bottom-right-radius: ($size/2);;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left;
+    //animation: loading-2 1.5s linear forwards 1.8s;
+  }
+  .donut-progress-right {
+    right: 0;
+    .donut-progress-bar {
+      left: -100%;
+      border-top-left-radius: ($size/2);;
+      border-bottom-left-radius: ($size/2);;
+      border-right: 0;
+      -webkit-transform-origin: center right;
+      transform-origin: center right;
+      //animation: loading-1 1.8s linear forwards;
+    }
+  }
+}
+
+/* This for loop creates the 	necessary css animation names 
+Due to the split circle of progress-left and progress right, we must use the animations on each side. 
+*/
+@for $i from 1 through $howManySteps {
+	$stepName: ($i*(100 / $howManySteps));
+
+	//animation only the left side if below 50%
+	@if $i <= ($howManySteps/2) { 
+		.donut-progress[data-percentage="#{$stepName}"] {
+			.donut-progress-right .donut-progress-bar {
+				 animation: loading-#{$i} $animationTime linear forwards;
+			}
+			.donut-progress-left .donut-progress-bar {animation: 0;}
+		}
+	}
+	//animation only the right side if above 50%
+	@if $i > ($howManySteps/2)  {  
+		.donut-progress[data-percentage="#{$stepName}"] {
+			.donut-progress-right .donut-progress-bar {
+				animation: loading-#{($howManySteps/2)} $animationTime linear forwards; //set the animation to longest animation
+			}
+			.donut-progress-left .donut-progress-bar {
+      animation: loading-#{$i - ($howManySteps/2)} $animationTime linear forwards $animationTime;
+    }
+		}
+	}
+}
+
+//animation
+@for $i from 1 through ($howManySteps/2) { 
+	$degrees: (180/($howManySteps/2));
+	$degrees: ($degrees*$i);
+	@keyframes loading-#{$i}{
+    0%{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100%{
+        -webkit-transform: rotate($degrees);
+			transform: rotate(#{$degrees}deg);
+    }
+	}
+}
+
+/************************************************************** File loader CSS start  **************************************************************/

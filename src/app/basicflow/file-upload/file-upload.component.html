@@ -1,0 +1,212 @@
+<div class="file-upload-container">
+    <!---------------- Page Title ---------------->
+    <p class="page-title">
+        File Upload
+    </p>
+
+    <!---------------- File Upload Section ---------------->
+    <div class="row">
+
+        <div class="col">
+          <div class="bg-white box-shadow-c big-WboxR-height border mx-3 mb-4 mt-0">
+            <div class="row">
+              <div class="col-4 my-4 pl-5 position-relative">
+                <div class="dragNdrop-placehoder">
+                    <div class="cloud-upload">
+                        <i aria-hidden="true" class="fa fa-cloud-upload"></i>
+                        <span class="cloud-txt-bold">Drag and Drop</span>
+                        <span class="cloud-txt-light pt-1">your files here</span>
+                        <span class="cloud-txt-medium py-3">OR</span>
+                        <label class="btn btn-primary btn-sm" for="input-file">Browse</label>
+                        <input data-height="500" id="input-file" name="files[]" class="d-none">
+                      </div>
+                  <!-- <ngx-file-drop (onFileDrop)="dropped($event)" 
+                  (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" dropZoneLabel="Drop files here">
+                    <ng-template let-openFileSelector="openFileSelector" ngx-file-drop-content-tmp>
+                      <div class="cloud-upload">
+                        <i aria-hidden="true" class="fa fa-cloud-upload"></i>
+                        <span class="cloud-txt-bold">Drag and Drop</span>
+                        <span class="cloud-txt-light pt-1">your files here</span>
+                        <span class="cloud-txt-medium py-3">OR</span>
+                        <label class="btn btn-primary btn-sm" for="input-file">Browse</label>
+                        <input data-height="500" id="input-file" name="files[]" class="d-none">
+                      </div>
+                    </ng-template>
+                  </ngx-file-drop> -->
+                  <div class="formats-details mt-4">
+                    <p><span >Supported Formats:</span><small> JPEG, PNG, BMP, TIFF, PDF, Microsoft Office, HTML, JSON</small></p>
+                    <p><span>Max file size:</span> <small>100 MB</small></p>
+                  </div>
+                  <!-- <a class="btn btn-primary" (click)="upload()" role="button">Upload</a> -->
+                  <div class="d-flex justify-content-end align-items-end action-btn position-absolute mt-5">
+                    <button class="btn btn-outline-primary rounded-0" type="button" (click)="back()">Back</button>
+                    <button class="btn btn-primary rounded-0 ml-3" type="button">Continue</button>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="col-8">
+                <div class="blueshade blueshade-right big-WboxR-height d-none">
+                  <span>Upload</span>Files
+                </div>
+                <div class="border-left big-WboxR-height p-2">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="document-header dms-border-bottom">
+                        <h5>Upload Files</h5>
+                        <p>Click on continue to perform OCR</p>
+                        <div class="row">
+                          
+                          <div class="col">
+                            <div class="progress-bar-box py-3">
+                              <div class="progress rounded-0">
+                                <div style="width: 60%" aria-valuemax="100" aria-valuemin="0"
+                                  aria-valuenow="0" class="progress-bar" role="progressbar"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="uploading-txt">
+                              <span class="text-danger"> Uploading
+                                2 of 3</span>
+                                <!-- <span *ngIf="filesUploaded === fileCollection.length " class="text-primary"> Uploaded  3 of 3</span> -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 py-3">
+                      <div class="row">
+                        <div class="col">
+                          <div class="border-right upload-file-box-height px-3 py-3">
+                            <div class="scrollbar scrollbar-primary">
+                              <div class="force-overflow">
+                                <div class="upload-file-box mb-3 p-3">
+                                  <!-- <div class="row"> -->
+                                      <div class="d-flex">
+                                        <div class="pr-1">
+                                            <i aria-hidden="true" class="fa fa-file file-icon"></i>
+                                        </div>
+                                        <div class="mr-auto w-53 text-truncate">
+                                            <span class="upload-file-txt" title="{{ item.name }}">
+                                                doc_20201100.pdf
+                                              </span>
+                                        </div>
+                                        <div class="">
+                                            <div class="action-icons">
+                                                <ul>
+                                                  <li>
+                                                      <!-- <ng-container *ngIf="progressData[i]!=100">
+                                                      <i aria-hidden="true" class="fa fa-undo invisible"></i>
+                                                      <circle-progress [animationDuration]=300 [animation]=true
+                                                      [innerStrokeColor]="'#e7e8ea'" [innerStrokeWidth]=3 [outerStrokeColor]="'#406A9C'"
+                                                      [outerStrokeWidth]=3.2 [percent]=progressData[i] [radius]=8 [responsive]=false
+                                                      [showSubtitle]=false [space]=-2 [startFromZero]=false [titleFontSize]="0"
+                                                      [unitsFontSize]="0">
+                                                    </circle-progress>
+                                                  </ng-container> -->
+                                                  <!-- <ng-container *ngIf="progressData[i]==100 && isUploadSuccess[i]!=undefined"> -->
+                                                      <!-- <i (click)="reUploadFile(i)" aria-hidden="true" class="fa fa-undo" [ngClass]="(isUploadSuccess[i])? 'd-none':''"></i>
+                                                      <i aria-hidden="true" class="fa fa-exclamation-circle text-danger ml-3" [ngClass]="(isUploadSuccess[i])? 'd-none':''"></i> -->
+                                                      <i aria-hidden="true" class="fa fa-check-circle text-success" [ngClass]="(!isUploadSuccess[i])? 'd-none':''"></i>
+                                                    <!-- </ng-container> -->
+                                                  </li>
+                                                  <li>
+                                                      <i (click)="deleteFile(i)" aria-hidden="true" class="fa fa-trash"></i>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                        </div></div>
+                                </div>
+                                <div class="upload-file-box mb-3 p-3">
+                                    <!-- <div class="row"> -->
+                                        <div class="d-flex">
+                                          <div class="pr-1">
+                                              <i aria-hidden="true" class="fa fa-file file-icon"></i>
+                                          </div>
+                                          <div class="mr-auto w-53 text-truncate">
+                                              <span class="upload-file-txt" title="{{ item.name }}">
+                                                  doc_20201100.pdf
+                                                </span>
+                                          </div>
+                                          <div class="">
+                                              <div class="action-icons">
+                                                  <ul>
+                                                    <li>
+                                                        <!-- <ng-container *ngIf="progressData[i]!=100">
+                                                        <i aria-hidden="true" class="fa fa-undo invisible"></i>
+                                                        <circle-progress [animationDuration]=300 [animation]=true
+                                                        [innerStrokeColor]="'#e7e8ea'" [innerStrokeWidth]=3 [outerStrokeColor]="'#406A9C'"
+                                                        [outerStrokeWidth]=3.2 [percent]=progressData[i] [radius]=8 [responsive]=false
+                                                        [showSubtitle]=false [space]=-2 [startFromZero]=false [titleFontSize]="0"
+                                                        [unitsFontSize]="0">
+                                                      </circle-progress>
+                                                    </ng-container> -->
+                                                    <!-- <ng-container *ngIf="progressData[i]==100 && isUploadSuccess[i]!=undefined"> -->
+                                                        <!-- <i (click)="reUploadFile(i)" aria-hidden="true" class="fa fa-undo" [ngClass]="(isUploadSuccess[i])? 'd-none':''"></i>
+                                                        <i aria-hidden="true" class="fa fa-exclamation-circle text-danger ml-3" [ngClass]="(isUploadSuccess[i])? 'd-none':''"></i> -->
+                                                        <i aria-hidden="true" class="fa fa-check-circle text-success" [ngClass]="(!isUploadSuccess[i])? 'd-none':''"></i>
+                                                      <!-- </ng-container> -->
+                                                    </li>
+                                                    <li>
+                                                        <i (click)="deleteFile(i)" aria-hidden="true" class="fa fa-trash"></i>
+                                                    </li>
+                                                  </ul>
+                                                </div>
+                                          </div></div>
+                                  </div>
+                                  <div class="upload-file-box mb-3 p-3">
+                                    <!-- <div class="row"> -->
+                                        <div class="d-flex">
+                                          <div class="pr-1">
+                                              <i aria-hidden="true" class="fa fa-file file-icon"></i>
+                                          </div>
+                                          <div class="mr-auto w-53 text-truncate">
+                                              <span class="upload-file-txt" title="{{ item.name }}">
+                                                  doc_20201100.pdf
+                                                </span>
+                                          </div>
+                                          <div class="">
+                                              <div class="action-icons">
+                                                  <ul>
+                                                    <li>
+                                                        <!-- <ng-container *ngIf="progressData[i]!=100">
+                                                        <i aria-hidden="true" class="fa fa-undo invisible"></i>
+                                                        <circle-progress [animationDuration]=300 [animation]=true
+                                                        [innerStrokeColor]="'#e7e8ea'" [innerStrokeWidth]=3 [outerStrokeColor]="'#406A9C'"
+                                                        [outerStrokeWidth]=3.2 [percent]=progressData[i] [radius]=8 [responsive]=false
+                                                        [showSubtitle]=false [space]=-2 [startFromZero]=false [titleFontSize]="0"
+                                                        [unitsFontSize]="0">
+                                                      </circle-progress>
+                                                    </ng-container> -->
+                                                    <!-- <ng-container *ngIf="progressData[i]==100 && isUploadSuccess[i]!=undefined"> -->
+                                                        <!-- <i (click)="reUploadFile(i)" aria-hidden="true" class="fa fa-undo" [ngClass]="(isUploadSuccess[i])? 'd-none':''"></i>
+                                                        <i aria-hidden="true" class="fa fa-exclamation-circle text-danger ml-3" [ngClass]="(isUploadSuccess[i])? 'd-none':''"></i> -->
+                                                        <i aria-hidden="true" class="fa fa-check-circle text-success" [ngClass]="(!isUploadSuccess[i])? 'd-none':''"></i>
+                                                      <!-- </ng-container> -->
+                                                    </li>
+                                                    <li>
+                                                        <i (click)="deleteFile(i)" aria-hidden="true" class="fa fa-trash"></i>
+                                                    </li>
+                                                  </ul>
+                                                </div>
+                                          </div></div>
+                                  </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">&nbsp;</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</div>

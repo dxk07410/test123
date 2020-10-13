@@ -1,0 +1,172 @@
+.workflow-container {
+    .page-title {
+        font-family: "WhitneySSm-Semibold-Bas";
+        font-size: 18px;
+    }
+    .info-titles-box {
+        .info-box {
+            .info-details {
+                display: inline-block;
+                span {
+                    font-family: "WhitneySSm-Book-Bas";
+                    display: block;
+                    line-height: normal;
+                    &:first-child {
+                        color: #b5b6b8;
+                    }
+                    &.info-number {
+                        color: #e3336d;
+                        font-size: 24px;
+                        font-family: "WhitneySSm-Medium-Bas";
+                    }
+                }
+                &.info-card-details {
+                    span {
+                        font-family: "WhitneySSm-Medium-Bas";
+                        display: block;
+                        line-height: normal;
+                        &:first-child {
+                            color: #0069B4;
+                            font-size:  14px;
+                        }
+                        &.info-number {
+                            color: #9c9c9e;
+                            font-size: 12px;
+                            font-family: "WhitneySSm-Book-Bas";
+                        }
+                        &.status-header-txt {
+                            color: #e3336d;
+                            font-size: 16px;
+                            font-family: "WhitneySSm-Semibold-Bas";
+                        }
+                    }
+                    .activity-txt {
+                        color: #9c9c9e;
+                        font-family: "WhitneySSm-Book-Bas";
+                        font-size: 14px;
+                        span {
+                            color: #9c9c9e;
+                            font-family: "WhitneySSm-Semibold-Bas";
+                        }
+                    }   
+                }
+            }
+        }
+    }
+    .info-cards {
+        .card-header-titles {
+            padding: 20px 0 0 20px;
+            color: #525355;
+            font-family: 'WhitneySSm-Medium-Bas';
+            .title-border-b {
+                border-bottom: 5px solid #cb4b43;
+                display: block;
+                width: 68px;
+                margin: 4px 0 0;
+            }
+        }
+        span.view-all {
+            padding: 20px 20px 0 0;
+            font-family: 'WhitneySSm-Medium-Bas';
+            font-size: 12px;
+            display: block;
+        }
+        button {
+            &.btn {
+                > span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+    .info-card-h {
+        // height: 488px;
+        // max-height: 488px;
+        height: calc(100vh - 170px);
+        max-height: none;
+        .scrollStyle {
+            height: calc(100vh - 265px);
+        }
+    }
+    button {
+        display:none;
+    }
+    .unassigned {
+        .info-box {
+            border-left: 4px solid #ffad01;
+            background: rgba(131, 156, 186, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button { 
+            &.btn-outline-primary {
+                border-color: #ffad01;
+                color: #ffad01;
+                &:hover {
+                    background-color: #ffad01;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .inprogress {
+        .info-box {
+            border-left: 4px solid #0069b3;
+            background: rgba(131, 156, 186, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button { 
+            &.btn-outline-primary {
+                border-color: #0069b3;
+                color: #0069b3;
+                &:hover {
+                    background-color: #0069b3;
+                    color: #fff;
+                }
+            }
+        }
+      
+    }
+    .upload-complete{
+        .info-box {
+            border-left: 4px solid #366090;
+            background: rgba(131, 156, 186, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button { 
+            &.btn-outline-primary {
+                border-color: #366090;
+                color: #366090;
+                &:hover {
+                    background-color: #366090;
+                    color: #fff;
+                }
+            }
+        }
+        
+    }
+    .exception {
+        .info-box {
+            border-left: 4px solid #f64649;
+            background: rgba(131, 156, 186, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        button { 
+            &.btn-outline-primary {
+                border-color: #f64649;
+                color: #f64649;
+                &:hover {
+                    background-color: #f64649;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
